@@ -41,9 +41,9 @@
             }
 
             let url = entry.UserEnteredURL;
-            // if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            //     url = "http://" + url;
-            // }
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                url = "http://" + url;
+            }
 
             console.log("Redirecting to:", url);
 
@@ -54,7 +54,28 @@
             return res.status(500).json({ error: "Internal Server Error", details: error.message });
         }
     }
+
+    async function handleGetAnalytics(req,res) {
+         const short_id = req.params.shortid;
+         try{
+         const result = await URL.findOne({ ShortId: short_id }); //if({short_id}) js assumes it as ({short_id : short_id}) but our chema has ShortId : short_id
+         /*
+         Always match the exact field names (case-sensitive) you defined in your Mongoose schema 
+         when querying with .findOne, .findById, .updateOne, etc.
+         */
+         return res.json({
+            totalClicks : result.visitedHistory.length,
+            analytics : result.visitedHistory
+         })
+    }
+        catch(error){
+            console.error("Error :", error);
+            return res.status(500).json({ error: "Internal Server Error", details: error.message });
+        }
+    }
+
     module.exports = {  
         handleTogenrateNewShortURL,
         handleToRedirectURL,
+        handleGetAnalytics,
     }
