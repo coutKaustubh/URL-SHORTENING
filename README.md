@@ -1,43 +1,44 @@
-# 🔗 URL Shortener
+# 🌐 URL Shortener
 
-A simple Node.js-based URL shortener that allows users to generate short links, track click analytics, and redirect to original URLs. Built using Express.js, MongoDB, and Mongoose.
+A secure and reliable full-stack web application to shorten long URLs and manage them with user authentication and session-based access.
+
+## 🚀 Features
+
+- 🔗 Shorten any valid URL
+- 🔐 User authentication with sessions (Login/Register/Logout)
+- 👤 Authenticated dashboard to manage your short URLs
+- 📊 Track the number of clicks on each URL
+- 🧠 Middleware-based custom authentication system
+- 🖥️ Simple, clean UI with EJS templates and CSS
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Technology           |
+|--------------|----------------------|
+| **Frontend** | HTML, CSS, EJS       |
+| **Backend**  | Node.js, Express.js  |
+| **Database** | MongoDB, Mongoose    |
+| **Auth**     | Sessions + Middleware|
 
 ---
 
-## Features
 
--  Shorten long URLs into simple short IDs
--  Redirect to original URLs using the short ID
--  Track and view analytics (timestamp of each visit)
--  Built with Node.js, Express, MongoDB, and Mongoose
-
----
-
-## Tech Stack
-
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (via Mongoose)
-- **ID Generation**: shortid
-- **API Testing**: Postman
-
----
 
 ## Folder Structure
-URL-SHORTENER/
+project-root/
 │
-├── controllers/
-│ └── url.js # Core logic for creating, redirecting and analytics
-│
-├── models/
-│ └── url.js # Mongoose schema and model
-│
-├── routes/
-│ └── url.js # Route definitions
-│
-├── connection.js # MongoDB connection utility
-├── index.js # Entry point of the server
-├── package.json
-└── README.md # You're here
+├── models/ # Mongoose schemas (User, URL)
+|── controllers/ # functions of routes
+├── routes/ # Express routes (auth, urls, etc.)
+├── views/ # EJS templates (home, login, dashboard, about)
+├── public/css/ # Static CSS styling
+├── middleware/ # Custom authentication middleware
+├── connection.js
+├── /service # hashmap to get and set id
+├── index.js # Main server file
+└── README.md # Project documentation
 
 
 ---
@@ -50,4 +51,32 @@ URL-SHORTENER/
    cd url-shortener
 2. Install dependencies (npm install)
 3. Start server (node index.js)
+
+
+---
+
+## 🔐 Authentication
+
+This app uses custom session-based authentication:
+
+- Passwords are securely hashed using `bcrypt`.
+- Sessions are managed using `express-session` with a MongoDB store.
+- Custom middleware protects routes (e.g., dashboard, URL management).
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/url-shortener.git
+cd url-shortener
+
+
+Install dependencies
+
+npm install
+
+npm start
 
