@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | URL Shortener</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <div class="wrapper">
+    
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">URL Shortener</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Register</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="heading"> Welcome Back</h1>
+
+    <div class="container">
+        <form method="POST" action="/user/login">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" class="URLBOX" placeholder="example@email.com" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" class="URLBOX" placeholder="Enter your password" required><br><br>
+
+            <input type="submit" class="sub" value="Login">
+           
+        </form>
+        <a href="/signup"><button type="submit" class="sub" >Don't have an account (Register)</button></a>
+    </div>
+
+    <!-- Footer -->
+     <div class="foot">
+    <footer class="footer">
+        <p>&copy; 2025 URL Shortener. All rights reserved.</p>
+    </footer>
+</div>
+</div>
+</body>
+</html>

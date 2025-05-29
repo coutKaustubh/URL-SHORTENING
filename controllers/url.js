@@ -9,7 +9,8 @@
         const result = await URL.create({         //Now  we will create the new shorten URL
             ShortId : generated_id,
             UserEnteredURL : body.URL,      //ye jo userenteredurl h ...yhi url pr hme nya shortid jo generate hua h usko redirect bhi krna h so we can also call irt redirected url 
-            visitedHistory: [],      
+            visitedHistory: [],  
+            createdBy : req.user._id,     //(req.user came from /middlewares /user.js)
         })
         return res.render("home" , {
             id: generated_id,
@@ -76,6 +77,7 @@
             return res.status(500).json({ error: "Internal Server Error", details: error.message });
         }
     }
+    
 
     module.exports = {  
         handleTogenrateNewShortURL,
