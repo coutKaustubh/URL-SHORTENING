@@ -22,6 +22,9 @@ app.use(express.json());
 //middleware to parse form data
 app.use(express.urlencoded({extended : false}));
 
+//This line tells your Express app to serve static files (like CSS, images, JS files) from a folder named public.
+app.use(express.static(path.resolve(__dirname, 'public')));
+
 
 app.use("/url" , urlRoute);
 app.use("/" , staticRoute);

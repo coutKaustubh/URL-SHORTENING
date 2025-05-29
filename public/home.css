@@ -1,0 +1,211 @@
+/* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #4CAF50;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    nav .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e0f7e9;
+    }
+
+    /* Main Section */
+    main {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #4CAF50;
+      font-size: 36px;
+    }
+
+    form {
+      margin-bottom: 40px;
+      animation: slideIn 1s ease-out;
+    }
+
+    .URLBOX {
+      width: 60%;
+      max-width: 400px;
+      height: 35px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .URLBOX:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px #4CAF50;
+    }
+
+    .sub {
+      width: 180px;
+      height: 35px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .sub:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    /* Table Section */
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeInTable 1s ease;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #eaf7ea;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInTable {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .container{
+        text-align: center;
+    }
+    .heading{
+        margin-top: 45px;
+        text-align: center;
+    }
+    .generated {
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #e8f5e9;
+  border-left: 6px solid #4CAF50;
+  border-radius: 8px;
+  color: #2e7d32;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: left;
+}
+
+/* Link Styling */
+.link {
+  text-decoration: none;
+  color: #1b5e20;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link:hover {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+.go-back-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  padding: 6px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.go-back-button:hover {
+  background-color: #d32f2f;
+}
