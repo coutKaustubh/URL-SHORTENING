@@ -11,7 +11,10 @@
             UserEnteredURL : body.URL,      //ye jo userenteredurl h ...yhi url pr hme nya shortid jo generate hua h usko redirect bhi krna h so we can also call irt redirected url 
             visitedHistory: [],      
         })
-        return res.json ({id : generated_id});
+        return res.render("home" , {
+            id: generated_id,
+        })
+        //directly UI pr render kiye and id send kiye waha
     }
     catch(err){
         return res.status(500).json({ error: "DB Error", details: err.message });
