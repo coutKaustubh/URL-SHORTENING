@@ -15,7 +15,7 @@ async function handleSignUp(req, res) {
         setUser(sessionID, user);                // Map the session ID to the user
         res.cookie("uid", sessionID);            // Set cookie with that session ID
 
-        return res.redirect('/');
+        return res.redirect('/login');
     } catch (err) {
         console.error("Error during signup:", err);
         return res.status(500).send("Something went wrong.");

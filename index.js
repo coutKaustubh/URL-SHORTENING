@@ -11,6 +11,11 @@ const PORT = 8001;
 const app = express();
 
 
+//Connection
+connectionToDb("mongodb://127.0.0.1:27017/short-url")
+.then(()=> console.log("Connection Successful"))
+.catch((err) => console.log("Some error has been occurred : ", err));
+
 //Routes
 const urlRoute = require("./routes/url")
 const staticRoute = require("./routes/staticrouter");
@@ -18,10 +23,6 @@ const userRoute = require("./routes/user");
 const { use } = require('react');
 
 
-//Connection
-connectionToDb("mongodb://127.0.0.1:27017/short-url")
-.then(()=> console.log("Connection Successful"))
-.catch((err) => console.log("Some error has been occurred : ", err));
 
 //For server side rendering lets set view engine
 app.set("view engine" , "ejs");
