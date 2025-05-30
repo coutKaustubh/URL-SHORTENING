@@ -209,3 +209,34 @@
 .go-back-button:hover {
   background-color: #d32f2f;
 }
+
+.footer{
+    margin-bottom: 0;
+    
+}
+
+/* Make the page take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flex container for layout */
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push footer to the bottom */
+.foot {
+  margin-top: auto;
+}
+
+/* Optional: footer styling */
+.footer {
+    
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
